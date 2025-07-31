@@ -7,55 +7,68 @@
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: url('background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  position: relative;
-  z-index: 1;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  z-index: -1;
-}
-
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #E9CA89;
+      position: relative;
+      z-index: 1;
     }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+    }
+
     header {
       text-align: center;
       padding: 40px 20px 10px;
     }
+
     h1 {
       margin: 0;
       font-size: 2em;
     }
+
     .panorama {
       width: 100%;
       max-width: 1000px;
       height: 600px;
       margin: 20px auto;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
     }
+
     iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
       color: #777;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px 30px;
     }
   </style>
 </head>
@@ -65,28 +78,25 @@ body::before {
     <h1>Virtual 360° Tour by AYS Developers</h1>
     <p>Explore the showroom in Lofts 1</p>
   </header>
-  <a href="https://wa.me/971569563409" target="_blank">
-  <button style="padding: 12px 24px; font-size: 16px; background-color: #25D366; color: white; border: none; border-radius: 10px; cursor: pointer;margin-left: 30px;">
-    💬 Contact VIA WhatsApp
-  </button>
-</a>
 
+  <a href="https://wa.me/971569563409" target="_blank">
+    <button>💬 Contact VIA WhatsApp</button>
+  </a>
 
   <div class="panorama">
-  <iframe width="100%" height="640" frameborder="0"
-          allow="xr-spatial-tracking; gyroscope; accelerometer"
-          allowfullscreen scrolling="no"
-          src="https://kuula.co/share/collection/7DmJy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
-  </iframe>
-</div>
+    <iframe
+      allow="xr-spatial-tracking; gyroscope; accelerometer"
+      allowfullscreen scrolling="no"
+      src="https://kuula.co/share/collection/7DmJy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
+    </iframe>
+  </div>
 
-<div class="panorama">
-  <iframe width="100%" height="640" frameborder="0"
-          allow="xr-spatial-tracking; gyroscope; accelerometer"
-          allowfullscreen scrolling="no"
-          src="https://kuula.co/share/collection/7Dp8G?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
-  </iframe>
-</div>
+  <div class="panorama">
+    <iframe
+      allow="xr-spatial-tracking; gyroscope; accelerometer"
+      allowfullscreen scrolling="no"
+      src="https://kuula.co/share/collection/7Dp8G?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
+    </iframe>
   </div>
 
   <footer>
