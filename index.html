@@ -10,21 +10,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #E9CA89;
-      position: relative;
-      z-index: 1;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      z-index: -1;
+      color: white;
     }
 
     header {
@@ -32,46 +18,42 @@
       padding: 40px 20px 10px;
     }
 
-    .header-box {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 15px;
-      display: inline-block;
-    }
-
     h1 {
       margin: 0;
       font-size: 2em;
     }
 
-    .content-block {
+    .section {
       display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 40px auto;
+      max-width: 1200px;
+      padding: 0 20px;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin: 40px 20px;
     }
 
     .panorama {
-      flex: 1 1 600px;
+      flex: 2;
+      min-width: 300px;
       height: 600px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      border-radius: 10px;
-      overflow: hidden;
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
+      border-radius: 12px;
     }
 
     .project-info {
-      flex: 1 1 300px;
-      background-color: rgba(0, 0, 0, 0.6);
+      flex: 1;
+      min-width: 280px;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 16px;
       padding: 20px;
-      border-radius: 15px;
-      max-width: 400px;
+      color: white;
     }
 
     .project-info h2 {
@@ -79,14 +61,26 @@
       color: #E9CA89;
     }
 
+    .project-info button {
+      padding: 10px 16px;
+      font-size: 14px;
+      background-color: #E9CA89;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      color: #777;
+      color: #aaa;
     }
 
-    button {
+    .whatsapp-button {
+      display: inline-block;
       padding: 12px 24px;
       font-size: 16px;
       background-color: #25D366;
@@ -94,13 +88,29 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      margin: 10px 30px;
+      text-decoration: none;
+      margin-left: 30px;
     }
 
-    @media (max-width: 900px) {
-      .content-block {
+    @media (max-width: 768px) {
+      .section {
         flex-direction: column;
-        align-items: center;
+        padding: 0 10px;
+      }
+
+      .panorama {
+        height: 300px;
+      }
+
+      .project-info {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .whatsapp-button {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
       }
     }
   </style>
@@ -108,67 +118,56 @@
 <body>
 
   <header>
-    <div class="header-box">
-      <h1>Virtual 360° Tour by AYS Developers</h1>
-      <p>Explore the showroom in Lofts 1</p>
-    </div>
+    <h1>Virtual 360° Tour by AYS Developers</h1>
+    <p>Explore our top projects – Lofts 1 and TIVANO</p>
   </header>
 
-  <a href="https://wa.me/971569563409" target="_blank">
-    <button>💬 Contact VIA WhatsApp</button>
+  <a class="whatsapp-button" href="https://wa.me/971569563409" target="_blank">
+    💬 Contact via WhatsApp
   </a>
 
-  <!-- Первый блок: Lofts 1 -->
-  <div class="content-block">
+  <!-- 🏢 Lofts 1 Section -->
+  <div class="section">
     <div class="panorama">
-      <iframe
-        allow="xr-spatial-tracking; gyroscope; accelerometer"
-        allowfullscreen scrolling="no"
-        src="https://kuula.co/share/collection/7DmJy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
-      </iframe>
+      <iframe src="https://kuula.co/share/collection/7DmJy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+              allow="xr-spatial-tracking; gyroscope; accelerometer"
+              allowfullscreen scrolling="no"></iframe>
     </div>
     <div class="project-info">
-      <h2>Aliya by AYS</h2>
-      <p>
-        📍 JVC, Dubai<br>
-        🏗️ Completion: Q2 2027<br>
-        💳 Payment Plan: 55 months<br>
-        💼 Developer: AYS Developers
-      </p>
-      <p>
-        🛏️ 1BR – 811 sq.ft – AED 1,314,553<br>
-        💰 Or only AED 835,000 with 100% payment
-      </p>
+      <h2>Lofts 1 – JVC</h2>
+      <p>Premium finished studios and duplexes in Dubai’s popular JVC district. Handover Q4 2025.</p>
+      <p><strong>Starting from:</strong><br>
+      • Studio – 427 sq.ft – AED 708,000<br>
+      • 2BR Duplex – 1,820 sq.ft – AED 2,200,000<br>
+      (Only for 100% payment)</p>
+      <button onclick="window.open('https://your-site.com/lofts1-inventory.pdf')">
+        📄 Download Inventory PDF
+      </button>
     </div>
   </div>
 
-  <!-- Второй блок: TIVANO -->
-  <div class="content-block">
+  <!-- 🌊 TIVANO Section -->
+  <div class="section">
     <div class="panorama">
-      <iframe
-        allow="xr-spatial-tracking; gyroscope; accelerometer"
-        allowfullscreen scrolling="no"
-        src="https://kuula.co/share/collection/7Dp8G?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
-      </iframe>
+      <iframe src="https://kuula.co/share/collection/7Dp8G?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+              allow="xr-spatial-tracking; gyroscope; accelerometer"
+              allowfullscreen scrolling="no"></iframe>
     </div>
     <div class="project-info">
-      <h2>TIVANO on Dubai Islands</h2>
-      <p>
-        🏝️ Dubai Islands, Waterfront<br>
-        🏗️ Completion: Q1 2027<br>
-        💳 Payment Plan: 60/40 upon hand over<br>
-        🌊 Some units with private pools
-      </p>
-      <p>
-        For 100% payment deals - prices<br>
-        🛏️ 1BR – 961 sq.ft – AED 1,604,000<br>
-        🛏️ 2BR – 1,374 sq.ft – AED 2,438,000
-      </p>
+      <h2>TIVANO – Dubai Islands</h2>
+      <p>Ultra-luxury beachfront apartments with private pools and branded interiors. Handover Q1 2027.</p>
+      <p><strong>Starting from:</strong><br>
+      • 1BR – 961 sq.ft – AED 1,604,000<br>
+      • 2BR – 1,374 sq.ft – AED 2,438,000<br>
+      (Only for 100% payment)</p>
+      <button onclick="window.open('https://your-site.com/tivano-inventory.pdf')">
+        📄 Download Inventory PDF
+      </button>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 | Powered by Insta360 & Kuula
+    &copy; 2025 | Powered by Insta360, Kuula & AYS Developers
   </footer>
 
 </body>
