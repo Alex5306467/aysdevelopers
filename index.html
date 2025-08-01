@@ -1,120 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AYS Projects Tour</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AYS Virtual Tours</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('your-background.jpg') no-repeat center center fixed;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: white;
     }
-
-    .header {
-      text-align: center;
-      padding: 40px 20px 20px;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    .header p {
-      margin: 10px 0;
-      font-size: 16px;
-    }
-
-    .whatsapp-button {
-      background-color: #25d366;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 12px;
-      cursor: pointer;
-      margin-top: 10px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .panorama {
-      width: 100%;
-      max-width: 1000px;
-      height: 600px;
-      margin: 20px auto;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    @media (max-width: 768px) {
-      .panorama {
-        width: 100vw;
-        height: 70vh;
-        margin: 10px 0;
-        border-radius: 0;
-      }
-    }
-
-    .project-block {
-      max-width: 1000px;
-      background: rgba(0, 0, 0, 0.6);
-      margin: 20px auto;
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
       padding: 20px;
+      max-width: 1400px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
       border-radius: 16px;
     }
-
-    .project-block h2 {
-      margin-top: 0;
-      color: #f9d878;
+    h1, p {
+      margin: 0 0 10px;
     }
-
-    .download-button {
-      margin-top: 15px;
-      background-color: #f9d878;
-      color: black;
-      padding: 10px 20px;
+    .section {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      flex-wrap: wrap;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .kuula-wrapper {
+      flex: 1 1 500px;
+      min-width: 300px;
+    }
+    .kuula-wrapper iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+    }
+    .text-block {
+      flex: 1 1 300px;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .text-block h2 {
+      margin-top: 0;
+    }
+    .whatsapp-button, .download-button {
+      margin-top: 10px;
+      padding: 12px 20px;
+      background-color: #25D366;
+      color: white;
+      border: none;
       border-radius: 8px;
-      display: inline-block;
+      font-size: 16px;
       text-decoration: none;
-      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .download-button {
+      background-color: #e9ca89;
+      color: black;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ddd;
+    }
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+      .kuula-wrapper iframe {
+        height: 400px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Virtual 360° Tour by AYS Developers</h1>
-    <p>Explore our top projects – Lofts 1 and TIVANO</p>
-    <a class="whatsapp-button" href="https://wa.me/YOUR_NUMBER">💬 Contact via WhatsApp</a>
-  </div>
+  <div class="container">
+    <header>
+      <h1>AYS Developers – Virtual 360° Tours</h1>
+      <p>Explore our projects: Lofts 1 and TIVANO</p>
+    </header>
 
-  <div class="panorama">
-    <iframe width="100%" height="100%" frameborder="0" allowfullscreen
-      src="https://kuula.co/share/collection/YOUR_KUULA_ID?logo=1&info=1&fs=1&vr=0">
-    </iframe>
-  </div>
+    <div class="section">
+      <div class="kuula-wrapper">
+        <iframe src="https://kuula.co/share/collection/7DmJy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+      </div>
+      <div class="text-block">
+        <h2>Lofts 1 – JVC</h2>
+        <p>Studios and Duplexes in a ready-to-move building. Stylish interiors, high ceilings, and flexible payment plans.</p>
+        <p>💸 From AED 644,000 | 414 sq.ft</p>
+        <a href="https://wa.me/971569563409" class="whatsapp-button" target="_blank">💬 Contact via WhatsApp</a>
+        <a href="lofts1-inventory.pdf" class="download-button" target="_blank">📄 Download Inventory PDF</a>
+      </div>
+    </div>
 
-  <div class="project-block">
-    <h2>Lofts 1 – JVC</h2>
-    <p>Premium finished studios and duplexes in Dubai’s popular JVC district. Handover Q4 2025.</p>
-    <p><strong>Starting from:</strong><br>
-    • Studio – 427 sq.ft – AED 708,000<br>
-    • 2BR Duplex – 1,820 sq.ft – AED 2,200,000<br>
-    (Only for 100% payment)</p>
-    <a class="download-button" href="Loft1-Inventory.pdf" download>📄 Download Inventory PDF</a>
-  </div>
+    <div class="section">
+      <div class="kuula-wrapper">
+        <iframe src="https://kuula.co/share/collection/7Dp8G?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+      </div>
+      <div class="text-block">
+        <h2>TIVANO – Dubai Islands</h2>
+        <p>Ultra-luxury beachfront project. European brands, rooftop yoga, cinema, and private pools on balconies.</p>
+        <p>💸 From AED 1,604,000 | 961 sq.ft</p>
+        <a href="https://wa.me/971569563409" class="whatsapp-button" target="_blank">💬 Contact via WhatsApp</a>
+        <a href="tivano-inventory.pdf" class="download-button" target="_blank">📄 Download Inventory PDF</a>
+      </div>
+    </div>
 
-  <div class="project-block">
-    <h2>TIVANO – Dubai Islands</h2>
-    <p>Ultra-luxury project with private pools, rooftop yoga, cinema, and premium European brands. Handover Q1 2027.</p>
-    <p><strong>Starting from:</strong><br>
-    • 1BR – 961 sq.ft – AED 1,604,000<br>
-    • 2BR – 1,374 sq.ft – AED 2,438,000</p>
-    <a class="download-button" href="Tivano-Inventory.pdf" download>📄 Download Inventory PDF</a>
+    <footer>
+      &copy; 2025 | Powered by Insta360 & Kuula | Built by AYS Developers
+    </footer>
   </div>
 </body>
 </html>
