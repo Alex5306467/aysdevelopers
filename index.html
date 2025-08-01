@@ -1,145 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Virtual Tour</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYS Projects Tour</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
+      font-family: Arial, sans-serif;
+      background: url('your-background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
 
-    header {
+    .header {
       text-align: center;
-      padding: 30px 15px 10px;
+      padding: 40px 20px 20px;
+      background: rgba(0, 0, 0, 0.6);
     }
 
-    h1 {
+    .header h1 {
       margin: 0;
-      font-size: 1.8em;
+      font-size: 28px;
+    }
+
+    .header p {
+      margin: 10px 0;
+      font-size: 16px;
     }
 
     .whatsapp-button {
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #25D366;
+      background-color: #25d366;
       color: white;
       border: none;
-      border-radius: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 12px;
       cursor: pointer;
+      margin-top: 10px;
       text-decoration: none;
-      text-align: center;
-    }
-
-    .section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      margin: 30px auto;
-      padding: 0 15px;
-      max-width: 1000px;
+      display: inline-block;
     }
 
     .panorama {
       width: 100%;
-      max-width: 100%;
-      height: 300px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+      max-width: 1000px;
+      height: 600px;
+      margin: 20px auto;
       border-radius: 12px;
+      overflow: hidden;
     }
 
-    .project-info {
-      width: 100%;
-      background-color: rgba(0,0,0,0.5);
+    @media (max-width: 768px) {
+      .panorama {
+        width: 100vw;
+        height: 70vh;
+        margin: 10px 0;
+        border-radius: 0;
+      }
+    }
+
+    .project-block {
+      max-width: 1000px;
+      background: rgba(0, 0, 0, 0.6);
+      margin: 20px auto;
+      padding: 20px;
       border-radius: 16px;
-      padding: 20px;
-      color: white;
-      box-sizing: border-box;
     }
 
-    .project-info h2 {
+    .project-block h2 {
       margin-top: 0;
-      color: #E9CA89;
+      color: #f9d878;
     }
 
-    .project-info button {
-      padding: 10px 16px;
-      font-size: 14px;
-      background-color: #E9CA89;
+    .download-button {
+      margin-top: 15px;
+      background-color: #f9d878;
       color: black;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-
-  <header>
+  <div class="header">
     <h1>Virtual 360° Tour by AYS Developers</h1>
     <p>Explore our top projects – Lofts 1 and TIVANO</p>
-  </header>
-
-  <a class="whatsapp-button" href="https://wa.me/971569563409" target="_blank">
-    💬 Contact via WhatsApp
-  </a>
-
-  <!-- Lofts 1 Section -->
-  <div class="section">
-    <div class="panorama">
-      <iframe src="https://kuula.co/share/collection/7DmJy?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no"></iframe>
-    </div>
-    <div class="project-info">
-      <h2>Lofts 1 – JVC</h2>
-      <p>Premium finished studios and duplexes in Dubai’s popular JVC district. Handover Q4 2025.</p>
-      <p><strong>Starting from:</strong><br>
-      • Studio – 427 sq.ft – AED 708,000<br>
-      • 2BR Duplex – 1,820 sq.ft – AED 2,200,000<br>
-      (Only for 100% payment)</p>
-      <button onclick="window.open('https://your-site.com/lofts1-inventory.pdf')">📄 Download Inventory PDF</button>
-    </div>
+    <a class="whatsapp-button" href="https://wa.me/YOUR_NUMBER">💬 Contact via WhatsApp</a>
   </div>
 
-  <!-- TIVANO Section -->
-  <div class="section">
-    <div class="panorama">
-      <iframe src="https://kuula.co/share/collection/7Dp8G?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no"></iframe>
-    </div>
-    <div class="project-info">
-      <h2>TIVANO – Dubai Islands</h2>
-      <p>Ultra-luxury beachfront apartments with private pools and branded interiors. Handover Q1 2027.</p>
-      <p><strong>Starting from:</strong><br>
-      • 1BR – 961 sq.ft – AED 1,604,000<br>
-      • 2BR – 1,374 sq.ft – AED 2,438,000<br>
-      (Only for 100% payment)</p>
-      <button onclick="window.open('https://your-site.com/tivano-inventory.pdf')">📄 Download Inventory PDF</button>
-    </div>
+  <div class="panorama">
+    <iframe width="100%" height="100%" frameborder="0" allowfullscreen
+      src="https://kuula.co/share/collection/YOUR_KUULA_ID?logo=1&info=1&fs=1&vr=0">
+    </iframe>
   </div>
 
-  <footer>
-    &copy; 2025 | Powered by Insta360, Kuula & AYS Developers
-  </footer>
+  <div class="project-block">
+    <h2>Lofts 1 – JVC</h2>
+    <p>Premium finished studios and duplexes in Dubai’s popular JVC district. Handover Q4 2025.</p>
+    <p><strong>Starting from:</strong><br>
+    • Studio – 427 sq.ft – AED 708,000<br>
+    • 2BR Duplex – 1,820 sq.ft – AED 2,200,000<br>
+    (Only for 100% payment)</p>
+    <a class="download-button" href="Loft1-Inventory.pdf" download>📄 Download Inventory PDF</a>
+  </div>
 
+  <div class="project-block">
+    <h2>TIVANO – Dubai Islands</h2>
+    <p>Ultra-luxury project with private pools, rooftop yoga, cinema, and premium European brands. Handover Q1 2027.</p>
+    <p><strong>Starting from:</strong><br>
+    • 1BR – 961 sq.ft – AED 1,604,000<br>
+    • 2BR – 1,374 sq.ft – AED 2,438,000</p>
+    <a class="download-button" href="Tivano-Inventory.pdf" download>📄 Download Inventory PDF</a>
+  </div>
 </body>
 </html>
