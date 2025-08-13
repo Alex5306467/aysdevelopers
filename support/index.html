@@ -5,32 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Support — Shoe Cleaning App</title>
   <meta name="description" content="Shoe Cleaning App support page: contact details, WhatsApp, email, FAQ." />
-  <meta property="og:title" content="Support — Shoe Cleaning App" />
-  <meta property="og:description" content="Contact us via WhatsApp, phone, or email. FAQ and privacy policy link." />
-  <meta property="og:type" content="website" />
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --muted: #9ca3af;
-      --text: #e5e7eb;
-      --accent: #22c55e;
-      --accent-2: #3b82f6;
-      --border: #1f2937;
-    }
-    * { box-sizing: border-box }
-    html, body { height: 100% }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial;
-      background: radial-gradient(1200px 800px at 20% 0%, #111 0%, var(--bg) 40%, #0b1025 100%);
-      color: var(--text);
+      background-image: url('background.jpg'); /* your leather texture file */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #fff;
       line-height: 1.55;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.55); /* overlay for readability */
+      min-height: 100vh;
+      padding: 32px 20px 56px;
     }
     .wrap {
       max-width: 900px;
       margin: 0 auto;
-      padding: 32px 20px 56px;
     }
     header {
       display: grid;
@@ -42,7 +36,7 @@
       margin: 0;
     }
     .sub {
-      color: var(--muted);
+      color: #ddd;
       font-size: 15px;
     }
     .grid {
@@ -54,77 +48,75 @@
       .grid { grid-template-columns: 1.1fr 0.9fr; }
     }
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: 16px;
       padding: 18px;
-      backdrop-filter: blur(6px);
     }
     h2 { margin: 0 0 10px; font-size: 20px; }
     .row {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 10px; padding: 14px 0; border-bottom: 1px dashed var(--border);
+      gap: 10px; padding: 14px 0; border-bottom: 1px dashed rgba(255,255,255,0.2);
     }
     .row:last-child { border-bottom: 0 }
     .who { display: grid; gap: 2px; }
     .name { font-weight: 600; }
-    .meta { color: var(--muted); font-size: 14px; }
+    .meta { color: #ccc; font-size: 14px; }
     .btns { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
       height: 36px; padding: 0 12px; border-radius: 10px;
-      border: 1px solid var(--border);
-      text-decoration: none; color: var(--text); font-weight: 600; font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none; color: #fff; font-weight: 600; font-size: 14px;
       white-space: nowrap;
     }
-    .btn.whatsapp { background: rgba(34, 197, 94, 0.1); }
-    .btn.call { background: rgba(59, 130, 246, 0.08); }
-    .btn.mail { background: rgba(255, 255, 255, 0.03); }
-    .email-block, .legal, .faq { margin-top: 16px; }
-    details { border-top: 1px dashed var(--border); padding: 12px 0; }
+    .btn.whatsapp { background: rgba(34, 197, 94, 0.2); }
+    .btn.call { background: rgba(59, 130, 246, 0.2); }
+    .btn.mail { background: rgba(255, 255, 255, 0.1); }
+    details { border-top: 1px dashed rgba(255,255,255,0.2); padding: 12px 0; }
     details:first-of-type { border-top: 0; }
     summary { cursor: pointer; font-weight: 600; }
     footer {
-      margin-top: 28px; color: var(--muted); font-size: 13px;
+      margin-top: 28px; color: #ccc; font-size: 13px;
       display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
     }
-    .links a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--border); }
+    .links a { color: #fff; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.4); }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Support</h1>
-      <div class="sub">Contact us via WhatsApp, phone, or email. We usually reply within one business day.</div>
-    </header>
+  <div class="overlay">
+    <div class="wrap">
+      <header>
+        <h1>Support</h1>
+        <div class="sub">Contact us via WhatsApp, phone, or email. We usually reply within one business day.</div>
+      </header>
 
-    <div class="grid">
-      <section class="card">
-        <h2>Contact Information</h2>
+      <div class="grid">
+        <section class="card">
+          <h2>Contact Information</h2>
 
-        <div class="row">
-          <div class="who">
-            <div class="name">Azamat</div>
-            <div class="meta">Phone: +971 54 701 9997</div>
+          <div class="row">
+            <div class="who">
+              <div class="name">Azamat</div>
+              <div class="meta">Phone: +971 54 701 9997</div>
+            </div>
+            <div class="btns">
+              <a class="btn whatsapp" href="https://wa.me/971547019997?text=Hello%20regarding%20Shoe%20Cleaning%20App." target="_blank">WhatsApp</a>
+              <a class="btn call" href="tel:+971547019997">Call</a>
+            </div>
           </div>
-          <div class="btns">
-            <a class="btn whatsapp" href="https://wa.me/971547019997?text=Hello%20regarding%20Shoe%20Cleaning%20App." target="_blank">WhatsApp</a>
-            <a class="btn call" href="tel:+971547019997">Call</a>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="who">
-            <div class="name">Bahaaudin Nasser</div>
-            <div class="meta">Phone: +971 55 972 3942</div>
+          <div class="row">
+            <div class="who">
+              <div class="name">Bahaaudin Nasser</div>
+              <div class="meta">Phone: +971 55 972 3942</div>
+            </div>
+            <div class="btns">
+              <a class="btn whatsapp" href="https://wa.me/971559723942?text=Hello%20regarding%20Shoe%20Cleaning%20App." target="_blank">WhatsApp</a>
+              <a class="btn call" href="tel:+971559723942">Call</a>
+            </div>
           </div>
-          <div class="btns">
-            <a class="btn whatsapp" href="https://wa.me/971559723942?text=Hello%20regarding%20Shoe%20Cleaning%20App." target="_blank">WhatsApp</a>
-            <a class="btn call" href="tel:+971559723942">Call</a>
-          </div>
-        </div>
 
-        <div class="email-block">
           <div class="row">
             <div class="who">
               <div class="name">Support Email</div>
@@ -134,12 +126,10 @@
               <a class="btn mail" href="mailto:a90d05@gmail.com?subject=Shoe%20Cleaning%20App%20Support">Email us</a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <aside class="card">
-        <h2>FAQ</h2>
-        <div class="faq">
+        <aside class="card">
+          <h2>FAQ</h2>
           <details>
             <summary>How quickly do you respond?</summary>
             <div class="meta">Usually within one business day. Response times may be longer outside working hours.</div>
@@ -152,19 +142,17 @@
             <summary>How can I delete my account?</summary>
             <div class="meta">Send an email to a90d05@gmail.com with the subject “Delete Account” and include your registered phone or email. We will confirm and provide a timeline for deletion.</div>
           </details>
-        </div>
 
-        <div class="legal">
           <h2>Legal</h2>
           <p class="links"><a href="https://alex5306467.github.io/crib-shoes/" target="_blank">Privacy Policy</a></p>
-        </div>
-      </aside>
-    </div>
+        </aside>
+      </div>
 
-    <footer>
-      <div>© <span id="y"></span> Shoe Cleaning App</div>
-      <div class="links">Email: <a href="mailto:a90d05@gmail.com">a90d05@gmail.com</a></div>
-    </footer>
+      <footer>
+        <div>© <span id="y"></span> Shoe Cleaning App</div>
+        <div class="links">Email: <a href="mailto:a90d05@gmail.com">a90d05@gmail.com</a></div>
+      </footer>
+    </div>
   </div>
 
   <script>
