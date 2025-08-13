@@ -1,1 +1,1 @@
-# AYS Developers 360 Tour Site
+# Crib shoes privacy policy
