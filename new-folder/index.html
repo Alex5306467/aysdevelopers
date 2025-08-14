@@ -30,73 +30,58 @@
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     .container{max-width:960px;margin:0 auto;padding:24px}
-    header{
-      display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px
-    }
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
     .brand{display:flex;gap:12px;align-items:center}
     .logo{width:40px;height:40px;border-radius:12px;background:radial-gradient(circle at 25% 25%, var(--mint-strong), var(--sage));box-shadow: var(--shadow)}
     .brand h1{font-size:18px;margin:0;font-weight:700}
     .sub{font-size:13px;color:var(--muted)}
 
-    .toolbar{
-      display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end
-    }
-    button, .chip{
-      appearance:none;border:none;cursor:pointer;border-radius:14px;padding:10px 14px;font-weight:600
-    }
+    .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end}
+    button, .chip{appearance:none;border:none;cursor:pointer;border-radius:14px;padding:10px 14px;font-weight:600}
     .btn{background:var(--accent);color:white;box-shadow:var(--shadow)}
     .btn:disabled{opacity:.6;cursor:not-allowed}
     .btn-secondary{background:var(--accent-2);color:white}
     .chip{background:rgba(255,255,255,.6);color:var(--ink);backdrop-filter:saturate(160%) blur(2px)}
 
-    .progress{
-      width:100%;background:rgba(255,255,255,.5);height:12px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin:12px 0 20px
-    }
+    .progress{width:100%;background:rgba(255,255,255,.5);height:12px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin:12px 0 20px}
     .bar{height:100%;width:0;background:linear-gradient(90deg, var(--accent), #56c7a2);transition:width .3s ease}
 
     .stage{display:grid;grid-template-columns:1fr;gap:16px}
 
-    .card-wrap{perspective:1200px}
+    .card-wrap{perspective:1200px; -webkit-perspective:1200px}
     .card{
       position:relative;width:100%;min-height:280px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
-      transform-style:preserve-3d;transition:transform .5s ease;overflow:hidden
+      transform-style:preserve-3d; -webkit-transform-style:preserve-3d; will-change: transform; transition:transform .5s ease;overflow:hidden
     }
-    .card.flipped{transform:rotateY(180deg)}
+    /* Флип-фикс: крутим СТОРОНЫ, а не контейнер */
     .side{
       position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px 24px;
-      backface-visibility:hidden
+      backface-visibility:hidden; -webkit-backface-visibility:hidden; transform: translateZ(0);
     }
-    .front{background:linear-gradient( 180deg, #ffffff 0%, var(--peach) 100%)}
-    .back{transform:rotateY(180deg);background:linear-gradient(180deg, #ffffff 0%, var(--mint) 100%)}
+    .front{transform: rotateY(0deg);background:linear-gradient( 180deg, #ffffff 0%, var(--peach) 100%)}
+    .back{transform: rotateY(180deg);background:linear-gradient(180deg, #ffffff 0%, var(--mint) 100%)}
+    .card.flipped{transform:none !important}
+    .card.flipped .front{transform:rotateY(180deg) !important}
+    .card.flipped .back{transform:rotateY(0deg) !important}
+
     .term{font-size:36px;letter-spacing:.3px;text-align:center;margin:0 0 10px}
     .hint{font-size:14px;color:var(--muted);text-align:center;margin:0}
 
-    .controls{
-      display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px
-    }
-
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px}
     .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
 
-    .panel{
-      background:rgba(255,255,255,.6);border-radius:var(--radius);padding:14px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between;box-shadow:var(--shadow)
-    }
+    .panel{background:rgba(255,255,255,.6);border-radius:var(--radius);padding:14px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between;box-shadow:var(--shadow)}
     .stat{font-size:14px;color:var(--muted)}
 
-    .list{
-      margin-top:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px
-    }
-    details{
-      background:rgba(255,255,255,.5);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)
-    }
+    .list{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+    details{background:rgba(255,255,255,.5);border-radius:12px;padding:10px 12px;box-shadow:var(--shadow)}
     summary{cursor:pointer;font-weight:600}
     .small{font-size:13px;color:var(--muted)}
 
     footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
     .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;background:#fff;border-radius:6px;border:1px solid #cbd5d1;padding:0 6px}
 
-    @media (min-width: 820px){
-      .stage{grid-template-columns: 1.2fr .8fr}
-    }
+    @media (min-width: 820px){.stage{grid-template-columns: 1.2fr .8fr}}
   </style>
 </head>
 <body>
@@ -116,9 +101,7 @@
       </div>
     </header>
 
-    <div class="progress" aria-label="прогресс">
-      <div class="bar" id="bar"></div>
-    </div>
+    <div class="progress" aria-label="прогресс"><div class="bar" id="bar"></div></div>
 
     <div class="stage">
       <!-- Карточка -->
@@ -163,9 +146,7 @@
       </aside>
     </div>
 
-    <footer>
-      Сделано для быстрого теста интерфейса карточек. Под GitHub Pages достаточно загрузить один HTML-файл.
-    </footer>
+    <footer>Сделано для быстрого теста интерфейса карточек. Под GitHub Pages достаточно загрузить один HTML-файл.</footer>
   </div>
 
 <script>
@@ -183,8 +164,7 @@
     { front: 'caducó', back: 'истёк срок (годности)', example: 'La tarjeta caducó el mes pasado.' }
   ];
 
-  // Пользовательские настройки
-  const STATE_KEY = 'flashcards_demo_state_v1';
+  const STATE_KEY = 'flashcards_demo_state_v2';
 
   const els = {
     card: document.getElementById('card'),
@@ -250,7 +230,7 @@
       return `<button class="chip" data-jump="${i}" title="Перейти к #${i+1}">${mark} ${i+1}. ${(reversed?c.back:c.front).slice(0,18)}</button>`
     }).join('');
     els.miniList.querySelectorAll('button').forEach(btn=>{
-      btn.addEventListener('click', e=>{
+      btn.addEventListener('click', ()=>{
         const to = Number(btn.dataset.jump) || 0;
         index = to; flipped = false; render(); saveState();
       });
@@ -269,20 +249,19 @@
     els.back.textContent = backText;
     els.example.textContent = reversed ? '' : (c.example || '');
 
+    // применяем класс flipped к контейнеру, но вращаем СТОРОНЫ (см. CSS)
     if(flipped) els.card.classList.add('flipped');
     else els.card.classList.remove('flipped');
 
     updateProgress();
     renderMiniList();
 
-    // Кнопки доступности
     els.buttons.prev.disabled = index===0;
     els.buttons.next.disabled = index===cards.length-1;
   }
 
   function gradeCurrent(v){
     grades[index] = v; // 0/1/2
-    // перейти к следующей
     if(index < cards.length-1){ index++; flipped=false; }
     render();
     saveState();
@@ -310,10 +289,8 @@
     else if(e.key==='3'){ gradeCurrent(2); }
   });
 
-  // Инициализация
   loadState();
   render();
 </script>
 </body>
 </html>
-
